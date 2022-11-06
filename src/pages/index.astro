@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title='Welcome to Astro.'>
+	<header>
+		<div>
+			<h1>Hacking in<br />Parallel</h1>
+			<time>December 27-30 2022</time>
+		</div>
+	</header>
+	<main>
+		<div class='details'>
+			<address>
+				<h2>ETI Schauspielschule</h2>
+				Rungestraße 20<br />
+				10179 Berlin
+			</address>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 64ch;
+	}
+	header {
+		width: 100%;
+		min-height: 50vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	h1 {
+		font-size: 6.4ch;
+		line-height: 1.1;
+		color: var(--headline-color);
+	}
+	time {
+		font-size: 3.2ch;
+	}
+	address {
+		font-style: normal;
+	}
+</style>
