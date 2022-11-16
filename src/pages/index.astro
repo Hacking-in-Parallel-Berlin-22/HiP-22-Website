@@ -10,7 +10,12 @@ import Layout from '../layouts/Layout.astro'
 		</div>
 	</header>
 	<main>
-		<div class='details'>
+		<article class='cfp gradient-bg'>
+			<a href='https://pretalx.c3voc.de/hip-berlin-2022/cfp'>
+				<h2>Call for participation &rarr;</h2>
+			</a>
+		</article>
+		<div>
 			<address>
 				<h2>ETI Schauspielschule</h2>
 				Rungestraße 20<br />
@@ -20,7 +25,7 @@ import Layout from '../layouts/Layout.astro'
 	</main>
 </Layout>
 
-<style>
+<style lang='scss'>
 	main {
 		margin: auto;
 		padding: 1.5rem;
@@ -37,6 +42,21 @@ import Layout from '../layouts/Layout.astro'
 		font-size: 6.4ch;
 		line-height: 1.1;
 		color: var(--headline-color);
+	}
+	.cfp {
+		margin: 0 -1.5rem;
+		text-align: center;
+		&:hover {
+			opacity: 0.8;
+		}
+		a {
+			color: var(--background);
+		}
+		h2 {
+			font-size: 2.4rem;
+			line-height: 1.2;
+			margin: 0;
+		}
 	}
 	time {
 		font-size: 3.2ch;

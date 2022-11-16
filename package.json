@@ -13,5 +13,8 @@
   "dependencies": {
     "astro": "^1.6.0"
   },
-  "packageManager": "yarn@3.2.4"
+  "packageManager": "yarn@3.3.0",
+  "devDependencies": {
+    "sass": "^1.56.1"
+  }
 }
