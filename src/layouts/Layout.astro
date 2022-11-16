@@ -1,9 +1,10 @@
 ---
 export interface Props {
-	title: string
+	title?: string
 }
 
 const { title } = Astro.props
+const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 ---
 
 <!DOCTYPE html>
@@ -12,10 +13,14 @@ const { title } = Astro.props
 		<meta charset='UTF-8' />
 		<meta name='viewport' content='width=device-width' />
 		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-		<title>{title}</title>
+		<title>{`${title ? title + ' / ' : ''}${permaTitle}`}</title>
 	</head>
 	<body>
 		<slot />
+		<footer>
+			<a href='/imprint/'>Imprint</a> ////
+			<a href='/privacy/'>Privacy</a>
+		</footer>
 		<style is:global lang='scss'>
 			:root {
 				--background: #000;
@@ -49,6 +54,11 @@ const { title } = Astro.props
 				font-size: 1rem;
 				line-height: 1.5;
 				font-weight: 500;
+			}
+			main {
+				margin: auto;
+				padding: 1.5rem;
+				max-width: 64ch;
 			}
 			h1,
 			h2,
@@ -84,6 +94,11 @@ const { title } = Astro.props
 					border-radius: inherit;
 					content: '';
 				}
+			}
+			footer {
+				font-size: 0.75rem;
+				text-align: center;
+				padding: 1.5rem 0;
 			}
 		</style>
 	</body>
