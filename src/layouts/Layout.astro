@@ -16,6 +16,20 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 		<title>{`${title ? title + ' / ' : ''}${permaTitle}`}</title>
 	</head>
 	<body>
+		<ul class='socials'>
+			<li class='mastodon'>
+				<a
+					href='https://chaos.social/@HIP22'
+					title='HiP 2022 Berlin on Mastodon'
+					><img src='/icons/mastodon.svg' alt='' />
+				</a>
+			</li>
+			<!-- <li class='matrix'>
+				<a href='#' title='HiP 2022 Berlin on Matrix'
+					><img src='/icons/matrix.svg' alt='' />
+				</a>
+			</li> -->
+		</ul>
 		<slot />
 		<footer>
 			<a href='/imprint/'>Imprint</a> ////
@@ -34,7 +48,6 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 					#ff9900 77.58%,
 					#6c2400 96.25%
 				);
-				box-sizing: border-box;
 			}
 			@font-face {
 				font-family: 'IBM Plex Mono';
@@ -54,6 +67,27 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 				font-size: 1rem;
 				line-height: 1.5;
 				font-weight: 500;
+				box-sizing: border-box;
+			}
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			.socials {
+				list-style: none;
+				margin: 0;
+				padding: 1.5rem;
+				height: 1.5rem;
+				display: flex;
+				justify-content: flex-end;
+				gap: 1rem;
+				li {
+					height: 100%;
+					flex: 0 1 1.5rem;
+					img {
+						height: 100%;
+					}
+				}
 			}
 			main {
 				margin: auto;
@@ -67,10 +101,15 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 			h5,
 			h6 {
 				font-weight: 500;
+				color: var(--headline-color);
 			}
 			a {
 				color: var(--headline-color);
 				text-decoration: none;
+				transition: opacity 0.2s ease-in-out;
+				&:hover {
+					opacity: 0.8;
+				}
 			}
 			.gradient-bg {
 				background: var(--gradient);
