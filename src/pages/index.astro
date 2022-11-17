@@ -28,24 +28,35 @@ import Layout from '../layouts/Layout.astro'
 <style lang='scss'>
 	header {
 		width: 100%;
+		padding: 1.5rem;
 		min-height: 50vh;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
 	h1 {
+		display: block;
 		font-size: 6.4ch;
 		line-height: 1.1;
 		color: var(--headline-color);
+		img {
+			max-width: 100%;
+		}
 	}
 	.cfp {
-		margin: 0 -1.5rem 3rem;
+		max-width: 100%;
+		@media screen and (min-width: 768px) {
+			margin: 0 -1.5rem 3rem;
+		}
 		text-align: center;
 		a {
 			color: var(--background);
 		}
 		h2 {
-			font-size: 2.4rem;
+			font-size: 2rem;
+			@media screen and (min-width: 768px) {
+				font-size: 2.4rem;
+			}
 			line-height: 1.2;
 			margin: 0;
 			color: #000;

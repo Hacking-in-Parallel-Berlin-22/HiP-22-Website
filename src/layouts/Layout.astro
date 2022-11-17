@@ -24,11 +24,13 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 					><img src='/icons/mastodon.svg' alt='' />
 				</a>
 			</li>
-			<!-- <li class='matrix'>
-				<a href='#' title='HiP 2022 Berlin on Matrix'
+			<li class='matrix'>
+				<a
+					href='https://matrix.to/#/%23xc3-space%3A1312.media'
+					title='HiP 2022 Berlin on Matrix'
 					><img src='/icons/matrix.svg' alt='' />
 				</a>
-			</li> -->
+			</li>
 		</ul>
 		<slot />
 		<footer>
@@ -60,6 +62,11 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 					U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+20AC,
 					U+2122, U+2212, U+FB01-FB02;
 			}
+			*,
+			*:after,
+			*:before {
+				box-sizing: border-box;
+			}
 			html {
 				font-family: 'IBM Plex Mono', monospace;
 				background-color: var(--background);
@@ -67,11 +74,13 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 				font-size: 1rem;
 				line-height: 1.5;
 				font-weight: 500;
-				box-sizing: border-box;
+				width: 100vw;
 			}
 			body {
 				margin: 0;
 				padding: 0;
+				overflow-x: hidden;
+				width: 100%;
 			}
 			.socials {
 				list-style: none;
@@ -92,6 +101,7 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 			main {
 				margin: auto;
 				padding: 1.5rem;
+				width: 100%;
 				max-width: 64ch;
 			}
 			h1,
@@ -108,7 +118,7 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 				text-decoration: none;
 				transition: opacity 0.2s ease-in-out;
 				&:hover {
-					opacity: 0.8;
+					opacity: 0.75;
 				}
 			}
 			.gradient-bg {
