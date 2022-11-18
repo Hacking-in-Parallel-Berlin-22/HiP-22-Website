@@ -121,6 +121,15 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 					opacity: 0.75;
 				}
 			}
+			button {
+				appearance: none;
+				border: none;
+				color: inherit;
+				font-family: inherit;
+				font-size: inherit;
+				font-weight: 500;
+				cursor: pointer;
+			}
 			.gradient-bg {
 				background: var(--gradient);
 				padding: 1.5rem;
@@ -133,6 +142,7 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 				background: var(--background);
 				border-radius: 1.5rem;
 				padding: 1.5rem;
+				transition: border-radius 0.2s ease-in-out;
 
 				&::before {
 					position: absolute;
@@ -142,6 +152,9 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 					background: var(--gradient);
 					border-radius: inherit;
 					content: '';
+				}
+				&:is(button):hover {
+					border-radius: 0.5rem;
 				}
 			}
 			footer {
