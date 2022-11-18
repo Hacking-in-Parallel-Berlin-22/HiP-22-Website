@@ -16,29 +16,32 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 		<title>{`${title ? title + ' / ' : ''}${permaTitle}`}</title>
 	</head>
 	<body>
-		{
-			title && (
-				<a href='/'>
-					<img class='logo' src='/design-resources/logo/colored.svg' />
-				</a>
-			)
-		}
-		<ul class='socials'>
-			<li class='mastodon'>
-				<a
-					href='https://chaos.social/@HIP22'
-					title='HiP 2022 Berlin on Mastodon'
-					><img src='/icons/mastodon.svg' alt='' />
-				</a>
-			</li>
-			<li class='matrix'>
-				<a
-					href='https://matrix.to/#/%23xc3-space%3A1312.media'
-					title='HiP 2022 Berlin on Matrix'
-					><img src='/icons/matrix.svg' alt='' />
-				</a>
-			</li>
-		</ul>
+		<header class='site-header'>
+			{
+				title && (
+					<a href='/'>
+						<img class='logo' src='/design-resources/logo/colored.svg' />
+					</a>
+				)
+			}
+			{!title && <div />}
+			<ul class='socials'>
+				<li class='mastodon'>
+					<a
+						href='https://chaos.social/@HIP22'
+						title='HiP 2022 Berlin on Mastodon'
+						><img src='/icons/mastodon.svg' alt='' />
+					</a>
+				</li>
+				<li class='matrix'>
+					<a
+						href='https://matrix.to/#/%23xc3-space%3A1312.media'
+						title='HiP 2022 Berlin on Matrix'
+						><img src='/icons/matrix.svg' alt='' />
+					</a>
+				</li>
+			</ul>
+		</header>
 		<slot />
 		<footer>
 			<a href='/imprint/'>Imprint</a> ////
@@ -89,16 +92,22 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 				overflow-x: hidden;
 				width: 100%;
 			}
+			.site-header {
+				display: flex;
+				justify-content: space-between;
+			}
 			.logo {
 				max-width: 12rem;
+				height: 100%;
+				margin-left: 0.75rem;
 			}
 			.socials {
 				list-style: none;
+				display: inline-flex;
+				justify-content: flex-end;
 				margin: 0;
 				padding: 1.5rem;
-				height: 1.5rem;
-				display: flex;
-				justify-content: flex-end;
+				height: 4.5rem;
 				gap: 1rem;
 				li {
 					height: 100%;
