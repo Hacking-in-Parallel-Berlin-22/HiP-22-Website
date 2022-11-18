@@ -16,6 +16,13 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 		<title>{`${title ? title + ' / ' : ''}${permaTitle}`}</title>
 	</head>
 	<body>
+		{
+			title && (
+				<a href='/'>
+					<img class='logo' src='/design-resources/logo/colored.svg' />
+				</a>
+			)
+		}
 		<ul class='socials'>
 			<li class='mastodon'>
 				<a
@@ -81,6 +88,9 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 				padding: 0;
 				overflow-x: hidden;
 				width: 100%;
+			}
+			.logo {
+				max-width: 12rem;
 			}
 			.socials {
 				list-style: none;
