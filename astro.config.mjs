@@ -1,4 +1,7 @@
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
-export default defineConfig({});
+import compress from "astro-compress";
+
+export default defineConfig({
+  integrations: [compress()]
+});
