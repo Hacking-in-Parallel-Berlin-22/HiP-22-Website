@@ -5,6 +5,11 @@ import { Image } from '@astrojs/image/components'
 
 <Layout title='Merch'>
 	<main>
+		<p>
+			Merch is available in our <a
+				href='https://pretix.hip-berlin.de/hip2022/hip2022/'>ticket shop</a
+			>.
+		</p>
 		<figure>
 			<Image
 				width='1095'
@@ -12,7 +17,7 @@ import { Image } from '@astrojs/image/components'
 				src='/merch/hoodie.jpg'
 				alt='Hacking in Parallel Berlin 2022 Hoodie with a colorful print of a geometric grid with several gradient lines going from bottom left to top right'
 			/>
-			<figcaption>Hoodie</figcaption>
+			<figcaption>Hoodie, unisex (XS - XXL)</figcaption>
 		</figure>
 		<figure>
 			<Image
@@ -21,7 +26,7 @@ import { Image } from '@astrojs/image/components'
 				src='/merch/zipper.jpg'
 				alt='Hacking in Parallel Berlin 2022 Zip Up Hoodie with a colorful print of a geometric grid with several gradient lines going from bottom left to top right'
 			/>
-			<figcaption>Zipper</figcaption>
+			<figcaption>Zipper, unisex (XS - XXL)</figcaption>
 		</figure>
 		<figure>
 			<Image
@@ -30,7 +35,7 @@ import { Image } from '@astrojs/image/components'
 				src='/merch/stella.jpg'
 				alt='Hacking in Parallel Berlin 2022 Shirt with accented waist cut, colorful print of a geometric grid with several gradient lines going from bottom left to top right on the front of the shirt'
 			/>
-			<figcaption>Shirt - Stella (smaller waist fit)</figcaption>
+			<figcaption>Shirt - Stella, waisted cut (XS - XXL)</figcaption>
 		</figure>
 		<figure>
 			<Image
@@ -39,12 +44,17 @@ import { Image } from '@astrojs/image/components'
 				src='/merch/stanley.jpg'
 				alt='Hacking in Parallel Berlin 2022 Shirt with a colorful print of a geometric grid with several gradient lines going from bottom left to top right on the front of the shirt'
 			/>
-			<figcaption>Shirt - Stanley</figcaption>
+			<figcaption>Shirt - Stanley, unisex (XXS - 5XL)</figcaption>
 		</figure>
 	</main>
 </Layout>
 
 <style>
+	figure,
+	p {
+		margin-bottom: 4rem;
+		text-align: center;
+	}
 	img {
 		width: 100%;
 		height: auto;
