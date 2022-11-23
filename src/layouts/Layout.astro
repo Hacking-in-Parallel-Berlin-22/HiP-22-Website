@@ -20,13 +20,18 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 			{
 				title && (
 					<a href='/'>
-						<img class='logo' src='/design-resources/logo/colored.svg' />
+						<img class='logo' src='/design-resources/logo/slashes.svg' />
 					</a>
 				)
 			}
 			{!title && <div class='logo-placeholder' />}
+			<input type='checkbox' id='nav-toggle' class='hidden' />
 			<nav>
-				<ul>
+				<label for='nav-toggle' class='mobile-only'>Close</label>
+				<ul class='nav-links'>
+					<li>
+						<a href='/'>Home</a>
+					</li>|
 					<li>
 						<a href='https://pretix.hip-berlin.de/hip2022/hip2022/'
 							>Buy tickets</a
@@ -37,8 +42,29 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 						<a href='https://pretalx.c3voc.de/hip-berlin-2022/cfp'>CfP</a>
 					</li>
 				</ul>
+				<ul class='mobile-only socials'>
+					<li class='mastodon'>
+						<a
+							href='https://chaos.social/@HIP22'
+							title='HiP 2022 Berlin on Mastodon'
+							rel='noopener noreferrer'
+							target='_blank'
+							><img src='/icons/mastodon.svg' alt='' />
+						</a>
+					</li>
+					<li class='matrix'>
+						<a
+							href='https://matrix.to/#/%23xc3-space%3A1312.media'
+							title='HiP 2022 Berlin on Matrix'
+							rel='noopener noreferrer'
+							target='_blank'
+							><img src='/icons/matrix.svg' alt='' />
+						</a>
+					</li>
+				</ul>
 			</nav>
-			<ul class='socials'>
+			<label for='nav-toggle' class='mobile-only gradient-border'>Menu</label>
+			<ul class='desktop-only socials'>
 				<li class='mastodon'>
 					<a
 						href='https://chaos.social/@HIP22'
@@ -57,8 +83,6 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 						><img src='/icons/matrix.svg' alt='' />
 					</a>
 				</li>
-				<input type='checkbox' id='nav-toggle' class='hidden' />
-				<label for='nav-toggle'>Menu</label>
 			</ul>
 		</header>
 		<slot />
@@ -112,50 +136,106 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 				width: 100%;
 			}
 			.site-header {
+				max-height: 4.5rem;
 				display: flex;
 				justify-content: space-between;
 				max-width: 72rem;
 				margin: 0 auto;
+				align-items: stretch;
+
+				> label {
+					font-size: 1.5rem;
+					margin: auto 1.5rem;
+					padding: 0.25rem 0.75rem;
+				}
 			}
 			.logo {
 				width: 6.4rem;
 				height: 100%;
+				margin: auto;
 				margin-left: 0.75rem;
 				&-placeholder {
 					width: 6.4rem;
 				}
 			}
 			nav {
-				font-size: 1.2rem;
-				ul {
+				// mobile menu styles
+				position: fixed;
+				height: 100vh;
+				width: 100vw;
+				background: var(--background);
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				padding: 2rem;
+				font-size: 1.5rem;
+				transform: translateX(100vw);
+				transition: transform 0.25s ease-in-out;
+				z-index: 10;
+
+				// desktop menu styles
+
+				label {
+					align-self: flex-end;
+				}
+
+				.nav-links {
+					// height: 100%;
 					list-style: none;
 					padding: 0;
-					display: flex;
-					justify-content: center;
-					align-items: center;
 					gap: 2rem;
 				}
-				li {
+
+				@media screen and (min-width: 768px) {
+					flex-direction: row;
+					padding: 0;
+					position: relative;
+					font-size: 1.25rem;
+					width: 100%;
+					height: 100%;
+					transform: none;
+					background: none;
+					justify-content: center;
+
+					.nav-links {
+						display: flex;
+						gap: 1.5rem;
+					}
 				}
 			}
 			#nav-toggle {
 				height: 0;
 				width: 0;
 				overflow: hidden;
+				position: absolute;
+				left: -99999px;
+			}
+			#nav-toggle:checked + nav {
+				transform: none;
 			}
 			.socials {
 				list-style: none;
 				display: inline-flex;
-				justify-content: flex-end;
+				justify-content: center;
 				margin: 0;
 				padding: 1.5rem;
-				height: 4.5rem;
-				gap: 1rem;
+				width: 100%;
+				gap: 4rem;
 				li {
 					height: 100%;
 					flex: 0 1 1.5rem;
 					img {
 						height: 100%;
+					}
+				}
+				&.desktop-only {
+					height: 4.5rem;
+					width: auto;
+					gap: 1.5rem;
+					ul {
+						flex-direction: row;
 					}
 				}
 			}
@@ -222,6 +302,20 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 				font-size: 0.75rem;
 				text-align: center;
 				padding: 1.5rem 0;
+			}
+
+			@media screen and (max-width: 768px) {
+				.desktop-only {
+					display: none;
+				}
+			}
+			@media screen and (min-width: 768px) {
+				.mobile-only {
+					display: none;
+				}
+				.desktop-only {
+					display: inherit;
+				}
 			}
 		</style>
 	</body>
