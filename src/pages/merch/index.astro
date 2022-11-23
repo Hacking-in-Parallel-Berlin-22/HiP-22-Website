@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { Image } from '@astrojs/image/components'
+---
+
+<Layout title='Merch'>
+	<main>
+		<figure>
+			<Image
+				width='1095'
+				height='821'
+				src='/merch/hoodie.jpg'
+				alt='Hacking in Parallel Berlin 2022 Hoodie with a colorful print of a geometric grid with several gradient lines going from bottom left to top right'
+			/>
+			<figcaption>Hoodie</figcaption>
+		</figure>
+		<figure>
+			<Image
+				width='1600'
+				height='1388'
+				src='/merch/zipper.jpg'
+				alt='Hacking in Parallel Berlin 2022 Zip Up Hoodie with a colorful print of a geometric grid with several gradient lines going from bottom left to top right'
+			/>
+			<figcaption>Zipper</figcaption>
+		</figure>
+		<figure>
+			<Image
+				width='1423'
+				height='1600'
+				src='/merch/stella.jpg'
+				alt='Hacking in Parallel Berlin 2022 Shirt with accented waist cut, colorful print of a geometric grid with several gradient lines going from bottom left to top right on the front of the shirt'
+			/>
+			<figcaption>Shirt - Stella (smaller waist fit)</figcaption>
+		</figure>
+		<figure>
+			<Image
+				width='1524'
+				height='1600'
+				src='/merch/stanley.jpg'
+				alt='Hacking in Parallel Berlin 2022 Shirt with a colorful print of a geometric grid with several gradient lines going from bottom left to top right on the front of the shirt'
+			/>
+			<figcaption>Shirt - Stanley</figcaption>
+		</figure>
+	</main>
+</Layout>
+
+<style>
+	img {
+		width: 100%;
+		height: auto;
+	}
+</style>

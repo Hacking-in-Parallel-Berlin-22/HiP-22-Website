@@ -5,6 +5,13 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@altano/tiny-async-pool@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@altano/tiny-async-pool@npm:1.0.2"
+  checksum: 20cb16cd1a85576bfee4b923d5efef1f1957a048268e166026e9c15304902e500147baf3ac65c3d8cfaaf6d1e78f74efd6641c0cd7ce12b97d97145f15825788
+  languageName: node
+  linkType: hard
+
 "@ampproject/remapping@npm:^2.1.0":
   version: 2.2.0
   resolution: "@ampproject/remapping@npm:2.2.0"
@@ -26,6 +33,27 @@ __metadata:
   version: 0.29.9
   resolution: "@astrojs/compiler@npm:0.29.9"
   checksum: 53030b0afd284ec1acc0083c39219ae457b43f380729a53669d6a6e0df97afc76e1eac670c5dbc9d08c982a7cb682117d3c6822d2b4a53808d037e7a3e85eb47
+  languageName: node
+  linkType: hard
+
+"@astrojs/image@npm:^0.11.6":
+  version: 0.11.6
+  resolution: "@astrojs/image@npm:0.11.6"
+  dependencies:
+    "@altano/tiny-async-pool": ^1.0.2
+    http-cache-semantics: ^4.1.0
+    image-size: ^1.0.2
+    kleur: ^4.1.5
+    magic-string: ^0.25.9
+    mime: ^3.0.0
+    slash: ^4.0.0
+    web-streams-polyfill: ^3.2.1
+  peerDependencies:
+    sharp: ">=0.31.0"
+  peerDependenciesMeta:
+    sharp:
+      optional: true
+  checksum: 1fdcd109076ad6d396732f3edd571998b72864e9b1883a08b003400c69df5f2115cc3539052a983e94bb00acf0f480ad29988452548c2704976275252c42f275
   languageName: node
   linkType: hard
 
@@ -463,6 +491,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@example/basics@workspace:."
   dependencies:
+    "@astrojs/image": ^0.11.6
     "@svgdotjs/svg.js": ^3.1.2
     "@tweakpane/core": ^1.1.0
     astro: ^1.6.0
@@ -2988,6 +3017,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"image-size@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "image-size@npm:1.0.2"
+  dependencies:
+    queue: 6.0.2
+  bin:
+    image-size: bin/image-size.js
+  checksum: 01745fdb47f87cecf538e69c63f9adc5bfab30a345345c2de91105f3afbd1bfcfba1256af02bf3323077b33b0004469a837e077bf0cbb9c907e9c1e9e7547585
+  languageName: node
+  linkType: hard
+
 "immutable@npm:^4.0.0":
   version: 4.1.0
   resolution: "immutable@npm:4.1.0"
@@ -3033,7 +3073,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inherits@npm:2, inherits@npm:^2.0.3, inherits@npm:^2.0.4":
+"inherits@npm:2, inherits@npm:^2.0.3, inherits@npm:^2.0.4, inherits@npm:~2.0.3":
   version: 2.0.4
   resolution: "inherits@npm:2.0.4"
   checksum: 4a48a733847879d6cf6691860a6b1e3f0f4754176e4d71494c41f3475553768b10f84b5ce1d40fbd0e34e6bfbb864ee35858ad4dd2cf31e02fc4a154b724d7f1
@@ -3302,7 +3342,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kleur@npm:^4.0.3, kleur@npm:^4.1.4":
+"kleur@npm:^4.0.3, kleur@npm:^4.1.4, kleur@npm:^4.1.5":
   version: 4.1.5
   resolution: "kleur@npm:4.1.5"
   checksum: 1dc476e32741acf0b1b5b0627ffd0d722e342c1b0da14de3e8ae97821327ca08f9fb944542fb3c126d90ac5f27f9d804edbe7c585bf7d12ef495d115e0f22c12
@@ -4752,6 +4792,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"queue@npm:6.0.2":
+  version: 6.0.2
+  resolution: "queue@npm:6.0.2"
+  dependencies:
+    inherits: ~2.0.3
+  checksum: ebc23639248e4fe40a789f713c20548e513e053b3dc4924b6cb0ad741e3f264dcff948225c8737834dd4f9ec286dbc06a1a7c13858ea382d9379f4303bcc0916
+  languageName: node
+  linkType: hard
+
 "random-seed@npm:^0.3.0":
   version: 0.3.0
   resolution: "random-seed@npm:0.3.0"
@@ -6086,7 +6135,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"web-streams-polyfill@npm:^3.0.3":
+"web-streams-polyfill@npm:^3.0.3, web-streams-polyfill@npm:^3.2.1":
   version: 3.2.1
   resolution: "web-streams-polyfill@npm:3.2.1"
   checksum: b119c78574b6d65935e35098c2afdcd752b84268e18746606af149e3c424e15621b6f1ff0b42b2676dc012fc4f0d313f964b41a4b5031e525faa03997457da02

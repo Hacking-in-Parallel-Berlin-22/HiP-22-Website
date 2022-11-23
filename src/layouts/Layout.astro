@@ -24,7 +24,20 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 					</a>
 				)
 			}
-			{!title && <div />}
+			{!title && <div class='logo-placeholder' />}
+			<nav>
+				<ul>
+					<li>
+						<a href='https://pretix.hip-berlin.de/hip2022/hip2022/'
+							>Buy tickets</a
+						>
+					</li>
+					<li><a href='/merch'>Merch</a></li>
+					<li>
+						<a href='https://pretalx.c3voc.de/hip-berlin-2022/cfp'>CfP</a>
+					</li>
+				</ul>
+			</nav>
 			<ul class='socials'>
 				<li class='mastodon'>
 					<a
@@ -101,9 +114,25 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 				justify-content: space-between;
 			}
 			.logo {
-				max-width: 12rem;
+				width: 6.4rem;
 				height: 100%;
 				margin-left: 0.75rem;
+				&-placeholder {
+					width: 6.4rem;
+				}
+			}
+			nav {
+				font-size: 1.2rem;
+				ul {
+					list-style: none;
+					padding: 0;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					gap: 2rem;
+				}
+				li {
+				}
 			}
 			.socials {
 				list-style: none;
