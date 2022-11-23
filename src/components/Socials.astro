@@ -1,0 +1,38 @@
+---
+import { toFastProperties } from '../../.yarn/releases/yarn-3.3.0.cjs'
+
+export interface Props {
+	additionalClass: string
+}
+const { additionalClass } = Astro.props
+---
+
+<ul class={`socials ${additionalClass}`}>
+	<li class='mastodon'>
+		<a
+			href='https://chaos.social/@HIP22'
+			title='HiP 2022 Berlin on Mastodon'
+			rel='noopener noreferrer'
+			target='_blank'
+			><img src='/icons/mastodon.svg' alt='' />
+		</a>
+	</li>
+	<li class='matrix'>
+		<a
+			href='https://matrix.to/#/%23xc3-space%3A1312.media'
+			title='HiP 2022 Berlin on Matrix'
+			rel='noopener noreferrer'
+			target='_blank'
+			><img src='/icons/matrix.svg' alt='' />
+		</a>
+	</li>
+	<li class='matrix'>
+		<a
+			href='https://github.com/Hacking-in-Parallel-Berlin-22/'
+			title='HiP 2022 Berlin on GitHub'
+			rel='noopener noreferrer'
+			target='_blank'
+			><img src='/icons/github.svg' alt='' />
+		</a>
+	</li>
+</ul>
