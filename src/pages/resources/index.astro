@@ -229,12 +229,16 @@ import Layout from '../../layouts/Layout.astro'
 <style lang='scss'>
 	.grid-2col {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
 		gap: 2rem;
+		@media screen and (min-width: 768px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 	.grid-3col {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		@media screen and (min-width: 768px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
 		gap: 2rem;
 	}
 	.thumbnail {

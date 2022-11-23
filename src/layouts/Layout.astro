@@ -17,14 +17,9 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 	</head>
 	<body>
 		<header class='site-header'>
-			{
-				title && (
-					<a href='/'>
-						<img class='logo' src='/design-resources/logo/slashes.svg' />
-					</a>
-				)
-			}
-			{!title && <div class='logo-placeholder' />}
+			<a href='/' class={title ? '' : 'invisible'}>
+				<img class='logo' src='/design-resources/logo/slashes.svg' />
+			</a>
 			<input type='checkbox' id='nav-toggle' class='hidden' />
 			<nav>
 				<label for='nav-toggle' class='mobile-only'>Close</label>
@@ -154,9 +149,6 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 				height: 100%;
 				margin: auto;
 				margin-left: 0.75rem;
-				&-placeholder {
-					width: 6.4rem;
-				}
 			}
 			nav {
 				// mobile menu styles
@@ -316,6 +308,10 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 				.desktop-only {
 					display: inherit;
 				}
+			}
+			.invisible {
+				opacity: 0;
+				pointer-events: none;
 			}
 		</style>
 	</body>
