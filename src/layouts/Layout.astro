@@ -21,21 +21,24 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 			<a href='/' class={title ? '' : 'invisible'}>
 				<img class='logo' src='/design-resources/logo/slashes.svg' />
 			</a>
-			<input type='checkbox' id='nav-toggle' class='hidden' />
+			<input type='checkbox' id='nav-toggle' />
 			<nav>
 				<label for='nav-toggle' class='mobile-only'>Close</label>
 				<ul class='nav-links'>
 					<li>
 						<a href='/'>Home</a>
-					</li>|
+					</li>
 					<li>
 						<a href='https://pretix.hip-berlin.de/hip2022/hip2022/'
 							>Buy tickets</a
 						>
-					</li>|
-					<li><a href='/merch/'>Merch</a></li>|
+					</li>
+					<li><a href='/merch/'>Merch{' '}</a></li>
 					<li>
 						<a href='https://pretalx.c3voc.de/hip-berlin-2022/cfp'>CfP</a>
+					</li>
+					<li>
+						<a href='/resources/'>Resources</a>
 					</li>
 				</ul>
 				<Socials additionalClass='mobile-only' />
@@ -130,8 +133,6 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 				transition: transform 0.25s ease-in-out;
 				z-index: 10;
 
-				// desktop menu styles
-
 				label {
 					align-self: flex-end;
 				}
@@ -141,15 +142,22 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 					list-style: none;
 					padding: 0;
 					gap: 2rem;
+
+					li:not(:last-child):after {
+						content: '////';
+						opacity: 0.5;
+						display: block;
+					}
 				}
 
+				// desktop menu styles
 				@media screen and (min-width: 768px) {
 					flex-direction: row;
 					padding: 0;
 					position: relative;
-					font-size: 1.25rem;
+					font-size: 1rem;
 					width: 100%;
-					height: 100%;
+					height: auto;
 					transform: none;
 					background: none;
 					justify-content: center;
@@ -157,15 +165,19 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 					.nav-links {
 						display: flex;
 						gap: 0.75rem;
+
+						li:not(:last-child):after {
+							content: '/';
+							display: inline;
+						}
 					}
 				}
 			}
 			#nav-toggle {
-				height: 0;
-				width: 0;
 				overflow: hidden;
 				position: absolute;
 				left: -99999px;
+				top: -9999px;
 			}
 			#nav-toggle:checked + nav {
 				transform: none;
