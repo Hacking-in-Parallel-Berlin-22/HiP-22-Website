@@ -127,11 +127,16 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 				flex-direction: column;
 				justify-content: space-between;
 				align-items: center;
-				padding: 2rem;
+				padding: 2rem 2rem 4rem 2rem;
 				font-size: 1.5rem;
 				transform: translateX(100vw);
 				transition: transform 0.25s ease-in-out;
 				z-index: 10;
+				
+				@supports (height: 100dvh) {
+				 height:100dvh;
+				 padding:2rem;
+				}
 
 				label {
 					align-self: flex-end;
