@@ -4,8 +4,8 @@ import Layout from '../layouts/Layout.astro'
 
 <Layout>
 	<article>
-		<header>
-			<div>
+		<header id='hero'>
+			<div class='hero-content'>
 				<h1><img src='/logo.svg' alt='Hacking in Parallel ////' /></h1>
 				<time>December 27-30 2022</time>
 			</div>
@@ -54,10 +54,10 @@ import Layout from '../layouts/Layout.astro'
 					>.
 				</p>
 				<p>
-					We also need and welcome support during HiP. For our ACC
-					"Angel Coordination Center" we have on the 5th floor, on the roof, a
-					nice big room with terrace and view over Berlin available as Heaven.
-					Just register in our <a href='https://engelsystem.hip-berlin.de/'
+					We also need and welcome support during HiP. For our ACC "Angel
+					Coordination Center" we have on the 5th floor, on the roof, a nice big
+					room with terrace and view over Berlin available as Heaven. Just
+					register in our <a href='https://engelsystem.hip-berlin.de/'
 						>Angel Coordination Center</a
 					>.
 				</p>
@@ -84,19 +84,27 @@ import Layout from '../layouts/Layout.astro'
 	</article>
 </Layout>
 
+<script>
+	import '../scripts/visual.ts'
+</script>
+
 <style lang='scss'>
 	header {
 		width: 100%;
 		padding: 1.5rem;
-		min-height: 50vh;
+		min-height: 64vh;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+	}
+	.hero-content {
+		padding: 1.5rem 1rem;
 	}
 	h1 {
 		display: block;
 		font-size: 6.4ch;
 		line-height: 1.1;
+		// margin: 0;
 		color: var(--headline-color);
 		img {
 			max-width: 100%;
@@ -107,7 +115,7 @@ import Layout from '../layouts/Layout.astro'
 	}
 	.tickets {
 		width: 100%;
-		@media screen and (min-width: 768px) {
+		@media screen and (min-width: 1024px) {
 			margin: 0 -1.5rem 3rem;
 			width: calc(100% + 3rem);
 		}
@@ -117,7 +125,7 @@ import Layout from '../layouts/Layout.astro'
 		}
 		h2 {
 			font-size: 2rem;
-			@media screen and (min-width: 768px) {
+			@media screen and (min-width: 1024px) {
 				font-size: 2.2rem;
 			}
 			line-height: 1.2;
