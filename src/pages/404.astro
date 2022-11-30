@@ -4,11 +4,32 @@ import Layout from '../layouts/Layout.astro'
 
 <Layout title='Page not found'>
 	<main>
-		<img
+		<div class="figure">
+			<img
 			src='/404.gif'
 			alt='Pixel art of a squirrel with 2 halves of a fiber cable that were chewed in half. Cable and small lightning strikes flashing'
-		/>
+			/>
 		<h1>Page not found</h1>
-		<p>It seems the squirrels got to the cable again.</p>
+		<p>Looks like the squirrels got the fiber again</p>
+		</div>
 	</main>
 </Layout>
+
+<style>
+	figure,
+	p {
+		margin-bottom: 10rem;
+		text-align: center;
+	}
+	img {
+		margin-top: 5rem;
+		width: 50%;
+		height: auto;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	h1 {
+		text-align: center;
+	}
+</style>
