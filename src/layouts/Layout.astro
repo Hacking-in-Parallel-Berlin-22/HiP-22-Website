@@ -29,19 +29,32 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 						<a href='/'>Home</a>
 					</li>
 					<li>
-						<a href='https://pretix.hip-berlin.de/hip2022/hip2022/'
-							>Buy tickets</a
+						<a
+							href='https://pretix.hip-berlin.de/hip2022/hip2022/'
+							target='_blank'
+							rel='noopener,noreferrer'>Buy tickets</a
 						>
 					</li>
 					<li><a href='/merch/'>Merch{' '}</a></li>
 					<li>
-						<a href='https://pretalx.c3voc.de/hip-berlin-2022/cfp'>CfP</a>
+						<a
+							href='https://pretalx.c3voc.de/hip-berlin-2022/cfp'
+							target='_blank'
+							rel='noopener,noreferrer'>CfP</a
+						>
 					</li>
 					<li>
 						<a href='/resources/'>Resources</a>
 					</li>
 					<li>
 						<a href='/coc/'>CoC</a>
+					</li>
+					<li>
+						<a
+							href='https://engelsystem.hip-berlin.de/'
+							target='_blank'
+							rel='noopener,noreferrer'>Angel Center</a
+						>
 					</li>
 				</ul>
 				<Socials additionalClass='mobile-only' />
@@ -137,8 +150,8 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 				z-index: 10;
 
 				@supports (height: 100dvh) {
-				 height:100dvh;
-				 padding:2rem;
+					height: 100dvh;
+					padding: 2rem;
 				}
 
 				label {
@@ -159,7 +172,7 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 				}
 
 				// desktop menu styles
-				@media screen and (min-width: 768px) {
+				@media screen and (min-width: 1024px) {
 					flex-direction: row;
 					padding: 0;
 					position: relative;
@@ -206,9 +219,9 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 					}
 				}
 				&.desktop-only {
-					height: 4.5rem;
+					height: 4.2rem;
 					width: auto;
-					gap: 1.5rem;
+					gap: 1rem;
 					ul {
 						flex-direction: row;
 					}
@@ -279,12 +292,12 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 				padding: 1.5rem 0;
 			}
 
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: 1024px) {
 				.desktop-only {
 					display: none;
 				}
 			}
-			@media screen and (min-width: 768px) {
+			@media screen and (min-width: 1024px) {
 				.mobile-only {
 					display: none;
 				}
