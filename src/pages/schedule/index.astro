@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro'
+---
+
+<Layout title='schedule'>
+	<main>
+        <article>
+            <header>
+                <h1>Schedule</h1>
+
+                This is our event schedule. You can download it, as well as find more information <a href="https://pretalx.c3voc.de/hip-berlin-2022/schedule/">here</a>.
+            </header>
+            <main>
+                <pretalx-schedule event-url="https://pretalx.c3voc.de/hip-berlin-2022/" locale="en" format="list" style="--pretalx-clr-primary: #363336"></pretalx-schedule>
+                <noscript>
+                <div class="pretalx-widget">
+                        <div class="pretalx-widget-info-message">
+                            JavaScript is disabled in your browser. To access our schedule without JavaScript,
+                            please <a target="_blank" href="https://pretalx.c3voc.de/hip-berlin-2022/schedule/">click here</a>.
+                        </div>
+                    </div>
+                </noscript>
+            </main>
+        </article>
+	</main>
+</Layout>
