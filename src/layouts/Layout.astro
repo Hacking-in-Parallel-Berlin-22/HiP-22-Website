@@ -16,6 +16,7 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 		<title>{`${title ? title + ' / ' : ''}${permaTitle}`}</title>
 		<script type="text/javascript" src="https://pretalx.c3voc.de/hip-berlin-2022/schedule/widget/v2.en.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
 	<body>
 		<header class='site-header'>
@@ -147,7 +148,7 @@ const permaTitle = 'Hacking in Parallel 2022 //// Berlin'
 				font-size: 1.5rem;
 				transform: translateX(100vw);
 				transition: transform 0.25s ease-in-out;
-				z-index: 10;
+				z-index: 100000;
 
 				@supports (height: 100dvh) {
 					height: 100dvh;
