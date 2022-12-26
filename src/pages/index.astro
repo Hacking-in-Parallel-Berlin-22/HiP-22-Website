@@ -12,11 +12,14 @@ import Layout from '../layouts/Layout.astro'
 		</header>
 		<main>
 			<section>
-				<a
-					href='/schedule/'
-				>
+				<a href='/schedule/'>
 					<div class='tickets gradient-bg'>
 						<h2>Event Schedule &rarr;</h2>
+					</div>
+				</a>
+				<a href='/Floorplan HiP 2022.pdf' class="center" target="_blank" rel="noopener,noreferrer">
+					<div class='dl-button gradient-border'>
+						<h3>Download Floorplan</h3>
 					</div>
 				</a>
 			</section>
@@ -113,7 +116,7 @@ import Layout from '../layouts/Layout.astro'
 			color: var(--background);
 		}
 		h2 {
-			font-size: 2rem;
+			font-size: 1.8rem;
 			@media screen and (min-width: 1024px) {
 				font-size: 2.2rem;
 			}
@@ -122,8 +125,23 @@ import Layout from '../layouts/Layout.astro'
 			color: #000;
 		}
 	}
+
+	.center {
+		display: block;
+		text-align: center;
+	}
+
+	.dl-button {
+		text-align: center;
+		font-size: 1rem;
+		padding: .5rem 1.5rem;
+		width: auto;
+		display: inline-block;
+		margin: 1rem auto 0;
+	}
+
 	time {
-		font-size: 3.2ch;
+		font-size: 1.75rem;
 	}
 	address {
 		font-style: normal;
